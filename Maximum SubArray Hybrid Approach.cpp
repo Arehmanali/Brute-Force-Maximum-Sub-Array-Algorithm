@@ -215,7 +215,7 @@ MaxSubArrayRecord MaxSubArrayHybrid(int ARR[],int START_INDEX,int END_INDEX)
         return MaxSubArrayBrute(ARR, START_INDEX,END_INDEX,0);
     }
     else {
-
+	// Call the Recursive algorithm, and return the result
         return MaxSubArray(ARR,START_INDEX,END_INDEX);
     }
 }
