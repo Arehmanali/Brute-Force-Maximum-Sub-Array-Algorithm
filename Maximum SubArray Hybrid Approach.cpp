@@ -216,34 +216,7 @@ MaxSubArrayRecord MaxSubArrayHybrid(int ARR[],int START_INDEX,int END_INDEX)
     }
     else {
 
-        // get the midpoint index:
-        int midIndex = (START_INDEX + END_INDEX) / 2;
-       
-        // the records of left, right, and cross categories
-        MaxSubArrayRecord left;
-        MaxSubArrayRecord right;
-        MaxSubArrayRecord cross;
-        
-        // Recursively, solve the sub-problems:
-        left = MaxSubArray(ARR, START_INDEX, midIndex);
-        right = MaxSubArray(ARR, midIndex + 1, END_INDEX);
-        cross = MaxCross(ARR, START_INDEX, midIndex,END_INDEX);
-
-        // Compare the resulting data:
-        if (left.totalSum >= right.totalSum &&
-            left.totalSum >= cross.totalSum) {
-            // Return the  left sub-array, having the maximum.
-            return left;
-        }
-        else if (right.totalSum >= left.totalSum &&
-            right.totalSum >= cross.totalSum) {
-            // Return the right sub-array, having the maximum.
-            return right;
-        }
-        else {
-            // Return the cross sub-array, having the maximum.
-            return cross;
-        }
+        return MaxSubArray(ARR,START_INDEX,END_INDEX);
     }
 }
 
